@@ -1,6 +1,10 @@
 #include<iostream>
 using namespace std;
 
+int row; 
+char userinput, symbol;
+int input;
+
 void welcome(int& input){
     cout << "===============" << endl;
     cout << "Shape generator" << endl;
@@ -42,10 +46,105 @@ void goback(){
     cin >> end;
 }
 
+void diamond(){
+
+    rowinput(row);
+    symbolinput(symbol);
+    for(int i=1;i<=row;i++){
+        for(int j=row;j>=i;j--) {
+            cout << ' ';
+        }
+        for(int k=1;k<=(2*i-1);k++) {
+            cout << symbol;
+        }
+        cout << endl;
+    }
+    for(int i=1;i<=row;i++) {
+        for(int k=1;k<=i;k++) {
+            cout << ' ';
+        }
+        for(int j=row;j>=(2*i-row);j--) {
+            cout << symbol;
+        }
+        cout << endl;
+    }
+    goback();
+    welcome(input);
+
+}
+
+void triangle(){
+    rowinput(row);
+    symbolinput(symbol);
+    for(int i=1;i<=row;i++){
+        for(int j=row;j>=i;j--){
+            cout << ' ';
+        }
+        for(int k=1;k<=(2*i-1);k++){
+            cout << symbol;
+        }
+        cout << endl;
+    }
+    goback();
+    welcome(input);
+}
+
+void invertedtriangle(){
+    rowinput(row);
+    symbolinput(symbol);
+    for(int i=1;i<=row;i++){
+        for(int j=row;j>=i;j--){
+            cout << ' ';
+        }
+        for(int k=1;k<=(2*i-1);k++){
+            cout << symbol;
+        }
+        cout << endl;
+    }
+    goback();
+    welcome(input);
+}
+
+void rectangle(){
+    rowinput(row);
+    symbolinput(symbol);
+    for(int i=1;i<=row;i++){
+        for(int j=1;j<=row;j++){
+            cout << symbol;
+        }
+        cout << endl;
+    }
+    goback();
+    welcome(input);
+}
+
+void ritriangle(){
+    rowinput(row);
+    symbolinput(symbol);
+    for(int i=1;i<=row;i++){
+        for(int j=1;j<=i;j++){
+            cout << symbol;
+        }
+        cout << endl;
+    }
+    goback();
+    welcome(input);
+}
+
+void iritriangle(){
+    rowinput(row);
+    symbolinput(symbol);
+    for(int i=row;i>=1;i--){
+        for(int j=1;j<=i;j++){
+            cout << symbol;
+        }
+        cout << endl;
+    }
+    goback();
+    welcome(input);
+}
+
 int main() {
-    int row; 
-    char userinput, symbol;
-    int input;
     welcome(input);
     while (true){
         if(cin.fail()){
@@ -55,94 +154,22 @@ int main() {
         }
         else{ 
             if(input == 1) {
-                rowinput(row);
-                symbolinput(symbol);
-                for(int i=1;i<=row;i++){
-                    for(int j=row;j>=i;j--) {
-                        cout << ' ';
-                    }
-                    for(int k=1;k<=(2*i-1);k++) {
-                        cout << symbol;
-                    }
-                    cout << endl;
-                }
-                for(int i=1;i<=row;i++) {
-                    for(int k=1;k<=i;k++) {
-                        cout << ' ';
-                    }
-                    for(int j=row;j>=(2*i-row);j--) {
-                        cout << symbol;
-                    }
-                    cout << endl;
-                }
-                goback();
-                welcome(input);
+                diamond();
             }
             else if(input == 2) { 
-                rowinput(row);
-                symbolinput(symbol);
-                for(int i=1;i<=row;i++){
-                    for(int j=row;j>=i;j--){
-                        cout << ' ';
-                    }
-                    for(int k=1;k<=(2*i-1);k++){
-                        cout << symbol;
-                    }
-                    cout << endl;
-                }
-                goback();
-                welcome(input);
+                triangle();
             }
             else if(input == 3){
-                rowinput(row);
-                symbolinput(symbol);
-                for(int i=1;i<=row;i++){
-                    for(int j=1;j<=i;j++){
-                        cout << ' ';
-                    }
-                    for(int k=row;k>=(2*i-row);k--){
-                        cout << symbol;
-                    }
-                    cout << endl;
-                }
-                goback();
-                welcome(input);
+                invertedtriangle();
             }
             else if(input == 4){
-                rowinput(row);
-                symbolinput(symbol);
-                for(int i=1;i<=row;i++){
-                    for(int j=1;j<=row;j++){
-                        cout << symbol;
-                    }
-                    cout << endl;
-                }
-                goback();
-                welcome(input);
+                rectangle();
             }
             else if(input == 5){
-                rowinput(row);
-                symbolinput(symbol);
-                for(int i=1;i<=row;i++){
-                    for(int j=1;j<=i;j++){
-                        cout << symbol;
-                    }
-                    cout << endl;
-                }
-                goback();
-                welcome(input);
+                ritriangle();
             }
             else if(input == 6){
-                rowinput(row);
-                symbolinput(symbol);
-                for(int i=row;i>=1;i--){
-                    for(int j=1;j<=i;j++){
-                        cout << symbol;
-                    }
-                    cout << endl;
-                }
-                goback();
-                welcome(input);
+                iritriangle();
             }
             else if(input == 7){
                 break;
