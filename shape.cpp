@@ -92,11 +92,11 @@ void triangle(){
 void invertedtriangle(){
     rowinput(row);
     symbolinput(symbol);
-    for(int i=1;i<=row;i++){
-        for(int j=row;j>=i;j--){
+    for(int i=1;i<=row;i++) {
+        for(int k=1;k<=i;k++) {
             cout << ' ';
         }
-        for(int k=1;k<=(2*i-1);k++){
+        for(int j=row;j>=(2*i-row);j--) {
             cout << symbol;
         }
         cout << endl;
